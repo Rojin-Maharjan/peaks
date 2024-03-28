@@ -238,7 +238,7 @@ body {
   width: 100%;
 }
 table {
-  width: 80%;
+  width: 100%;
   text-align: center;
 }
 table tr td,
@@ -336,6 +336,10 @@ thead tr th {
   width: 100%;
   padding: 5px 0px;
 }
+.error input,
+.error textarea{
+  border-bottom: 1px solid red;
+}
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: rgba(0, 0, 0, 0.281);
@@ -412,6 +416,10 @@ footer section {
   color: white;
 
 }
+.error_txt{
+  color: red;
+  font-size: 10px;
+}
 /* Media Query */
 @media screen and (max-width: 480px) {
   .container {
@@ -423,8 +431,8 @@ footer section {
     display: none;
   }
   .nav-bar .nav ul {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .nav ul li a {
     font-size: 14px;

@@ -46,27 +46,31 @@
         <section class="contact-container">
             <div class="contact-form">
             <h3>Contact Us</h3>
-            <form action="" method="get" name="contact">
+            <form action="" method="get" name="contact" id="contact" novalidate>
                 <div class="personal-details">
-
                 <div class="input-box">
-                    <h4 class="field-name">Full name:</h4>
-                    <input type="text" value="" name="name" placeholder="Name">
+                    <label class="field-name" for="name">Full name:</label>
+                    <input type="text" value="" name="name" placeholder="Name" id="name">
+                    <span class="error_txt"></span>
                 </div>
                 <div class="input-box">
-                    <h4 class="field-name">Email Address:</h4>
-                    <input type="email" value="" name="email" placeholder="Email">
+                    <label class="field-name" for="email">Email Address:</label>
+                    <input type="email" value="" name="email" placeholder="Email" id="email">
+                    <span class="error_txt"></span>
                 </div>
             </div>
             <div class="input-box">
-                <h4 class="field-name">Subject:</h4>
-                    <input type="text" value="" name="subj" placeholder="Subject">
+                <label class="field-name" for="sub">Subject:</label>
+                    <input type="text" value="" name="subj" placeholder="Subject" id="sub">
+                    <span class="error_txt"></span>
             </div>
                 <div class="input-box">
-                    <h4 class="field-name">Message:</h4>
-                    <textarea name="message" id="message" cols="30" rows="2" placeholder="Message"></textarea>
+                    <label class="field-name" for="msg">Message:</label>
+                    <textarea name="message" id="message" cols="30" rows="2" placeholder="Message" id="msg"></textarea>
+                    <span class="error_txt"></span>
+                    
                 </div>
-                <button type="submit" class="Send">Send Message</button>
+                <button type="submit" class="Send" id="submit-btn">Send Message</button>
             </form>
         </div>
         <div class="contact-image">
@@ -115,5 +119,7 @@
             <p>&copy; All rights reserved || Peaks of Nepal</p>
         </section>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
