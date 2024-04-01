@@ -24,21 +24,21 @@ body {
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.611);
 }
-.nav-bar .nav ul {
+.nav-bar ul {
   display: flex;
 }
-.nav-bar .nav ul li {
+.nav-bar ul li {
   display: inline-block;
   list-style: none;
   font-size: 14px;
   padding: 10px 20px;
 }
-.nav-bar .nav ul li a {
+.nav-bar ul li a {
   text-decoration: none;
   color: white;
   transition: all 0.2s ease-in;
 }
-.nav-bar .nav ul li:hover .nav-menu {
+.nav-bar ul li:hover .nav-menu {
   opacity: 70%;
 }
 
@@ -428,21 +428,40 @@ footer section {
     margin: 0 auto;
     padding: 2rem;
   }
-  .top-logo {
+  
+  .nav-bar .nav{
+    position: fixed;
     display: none;
-  }
-  .nav-bar .nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .nav ul li a {
-    font-size: 14px;
-  }
-  .menu-bar {
-    display: block;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: rgb(99, 99, 99);
+    box-shadow: 0px 0px 20px 2px black;
+    height: 100%;
+    width: 50%;
     z-index: 1000;
-    color: black;
+  }
+  ul li{
+    width: 100%;
+  }
+ ul li a {
+    font-size: 12px;
+    width: 100%;
+  }
+  .menu-bar, .close-icon {
+    display: block;
+    color: white;
     cursor: pointer;
+    height: 24px;
+    width: 24px;
+
+  }
+  .close-icon{
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  svg{
+    color: white;
   }
   .txt h1 {
     font-size: 5vh;
@@ -644,6 +663,9 @@ footer section {
   }
   .blog-content{
     grid-template-columns: repeat(3, 1fr);
+  }
+  .menu-bar, .close-icon{
+    display: none;
   }
   /* Gallery page */
   .gallery-container {

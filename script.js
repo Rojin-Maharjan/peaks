@@ -4,6 +4,20 @@ const email = document.getElementById("email");
 const message = document.getElementById("message");
 const form = document.getElementById("contact");
 
+const menuBtn = document.getElementById("menuBtn");
+const closeBtn = document.getElementById("closeBtn");
+
+console.log(email);
+
+menuBtn.addEventListener('click', function(){
+    const nav = document.querySelector('.nav');
+    nav.style.display = 'flex';
+});
+
+closeBtn.addEventListener('click', function(){
+    const nav = document.querySelector('.nav');
+    nav.style.display = 'none';
+});
 // error function
 function errorMsg(input, msg){
     const input_box = input.parentElement;
@@ -19,9 +33,6 @@ function success(input){
 }
 // event listener 
 form.addEventListener('submit', function(e){
-
-    var email_check = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-
     if(fname.value === '' || fname.value == null){
         e.preventDefault();
         errorMsg(fname, "<sup>*</sup>Full Name required")
@@ -29,12 +40,12 @@ form.addEventListener('submit', function(e){
     else{
         success(fname);
     }
-    if(!email.value.match(email_check)){
+    if(email.value === '' || email.value == null){
         e.preventDefault();
-        errorMsg(email, "<sup>*</sup>Invalid email")
+        errorMsg(email, "<sup>*</sup>Email required");
     }
     else{
-        success(email);
+        success(email)
     }
     if(subj.value === '' || subj.value == null){
         e.preventDefault();
@@ -50,6 +61,16 @@ form.addEventListener('submit', function(e){
     else{
         success(message);
     }
-});
 
-console.log(message);
+});
+email.addEventListener("keyup", function emailValidation(e){
+    e.preventDefault();
+var email_check = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+if(!this.value.match(email_check)){
+    e.preventDefault();
+    errorMsg(email, "<sup>*</sup>Invalid email")
+}
+else{
+    success(email);
+}
+});
