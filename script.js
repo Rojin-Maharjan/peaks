@@ -7,8 +7,6 @@ const form = document.getElementById("contact");
 const menuBtn = document.getElementById("menuBtn");
 const closeBtn = document.getElementById("closeBtn");
 
-console.log(email);
-
 menuBtn.addEventListener('click', function(){
     const nav = document.querySelector('.nav');
     nav.style.display = 'flex';
