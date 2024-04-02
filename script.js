@@ -7,6 +7,9 @@ const form = document.getElementById("contact");
 const menuBtn = document.getElementById("menuBtn");
 const closeBtn = document.getElementById("closeBtn");
 
+var email_check = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+
 menuBtn.addEventListener('click', function(){
     const nav = document.querySelector('.nav');
     nav.style.display = 'flex';
@@ -43,7 +46,13 @@ form.addEventListener('submit', function(e){
         errorMsg(email, "<sup>*</sup>Email required");
     }
     else{
-        success(email)
+        if(!email.value.match(email_check)){
+            e.preventDefault();
+            errorMsg(email, "<sup>*</sup>Invalid email")
+        }
+        else{
+            success(email);
+        }
     }
     if(subj.value === '' || subj.value == null){
         e.preventDefault();
@@ -62,9 +71,7 @@ form.addEventListener('submit', function(e){
 
 });
 email.addEventListener("keyup", function emailValidation(e){
-    e.preventDefault();
-var email_check = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-if(!this.value.match(email_check)){
+if(!email.value.match(email_check)){
     e.preventDefault();
     errorMsg(email, "<sup>*</sup>Invalid email")
 }
