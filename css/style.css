@@ -38,6 +38,7 @@ body {
   color: white;
   transition: all 0.2s ease-in;
 }
+/* mouse hover effect */
 .nav-bar ul li:hover .nav-menu {
   opacity: 70%;
 }
@@ -224,9 +225,6 @@ body {
   align-items: center;
   gap: 5px;
 }
-.summit p {
-  border-bottom: 1px solid black;
-}
 .aside img {
   width: 300px;
   height: 300px;
@@ -251,6 +249,12 @@ thead {
 }
 thead tr th {
   font-weight: 200;
+}
+.tips ol{
+  padding-left: 30px;
+}
+.tips ol li{
+  padding: 5px;
 }
 /* contact-page */
 .contact-main {
@@ -391,6 +395,7 @@ footer section {
   color: white;
 
 }
+
 .social-icons a i:hover {
   top: 5px;
 }
@@ -420,6 +425,9 @@ footer section {
 .error_txt{
   color: red;
   font-size: 10px;
+}
+figure{
+  text-align: center;
 }
 /* Media Query */
 @media screen and (max-width: 480px) {
@@ -533,6 +541,11 @@ footer section {
   .details-title p {
     font-size: 10px;
     padding-top: 10px;
+  }
+  .side-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
   /* Blog-details content flex */
   .content-wrap {
@@ -666,6 +679,9 @@ footer section {
   }
   .menu-bar, .close-icon{
     display: none;
+  }
+  .side-content{
+    width: 40%;
   }
   /* Gallery page */
   .gallery-container {

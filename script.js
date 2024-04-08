@@ -1,5 +1,5 @@
 const fname = document.getElementById("name");
-const subj = document.getElementById("sub");
+const address = document.getElementById("address");
 const email = document.getElementById("email");
 const message = document.getElementById("message");
 const form = document.getElementById("contact");
@@ -54,12 +54,12 @@ form.addEventListener('submit', function(e){
             success(email);
         }
     }
-    if(subj.value === '' || subj.value == null){
+    if(address.value === '' || address.value == null){
         e.preventDefault();
-        errorMsg(subj, "<sup>*</sup>Subject required");
+        errorMsg(address, "<sup>*</sup>Address required");
     }
     else{
-        success(subj);
+        success(address);
     }
     if(message.value === '' || message.value == null){
         e.preventDefault();
